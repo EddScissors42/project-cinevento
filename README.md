@@ -6,11 +6,16 @@ Um mini-sistema de Cinema com seleção de filmes, gerenciamento de ingressos e 
 ## Estrutura do projeto:
 ```text
 ├── irl
+│   ├── Filme.java
 │   ├── Cliente.java
 │   ├── Filme.java
+│   ├── Ingresso.java
 │   └── Sala.java
 ├── repository
+│   ├── Cinema.java
+│   └── TipoSala.java
 ├── service
+│   └── FilmeService.java
 ├── ui
 └── Main.java
 
