@@ -5,13 +5,16 @@ import cinevento.irl.*;
 import java.util.List;
 
 public interface Cinema {
+
+    //Filmes
     void cadastrarFilme(Filme filme);
     Filme pesquisarFilme(int id);
     List<Filme> listarFilmes();
     void removerFilme(int id);
 
-    //void comprarIngresso (); //TODO
-    //void cancelarIngresso(); //TODO
+    //Ingressos - Sessões
+    Ingresso comprarIngresso(Cliente cliente, Sessao sessao);
+    void cancelarIngresso(String codigoReserva);
 
     //TODO - Cliente
 }
