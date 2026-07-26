@@ -11,7 +11,7 @@ public class Ingresso implements Serializable{
         this.sessao = sessao;
     }
     public String getCodigoReserva(){
-        return this.codigoReserva = codigoReserva;
+        return codigoReserva;
     }
     public Sessao getSessao(){
         return this.sessao;
