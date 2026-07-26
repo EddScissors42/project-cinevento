@@ -28,7 +28,7 @@ public class Filme {
     }
 
     public void setNome(String nome) {
-        this.titulo = titulo;
+        this.titulo = nome;
     }
 
     public String getGenero() {
