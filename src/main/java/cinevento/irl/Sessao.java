@@ -3,12 +3,12 @@ package cinevento.irl;
 import cinevento.repository.TipoSala;
 import java.util.Map;
 
-public class Sala {
+public class Sessao {
     private int numero;
     private TipoSala tipo; // Sala 3D, Macro XE, IMAX
     private Map<String, Cadeira> cadeiras; // cadeira lol
 
-    public Sala(int numero, TipoSala tipo, Map<String, Cadeira> cadeiras){
+    public Sessao(int numero, TipoSala tipo, Map<String, Cadeira> cadeiras){
         this.numero = numero;
         this.tipo = tipo;
         this.cadeiras = cadeiras;

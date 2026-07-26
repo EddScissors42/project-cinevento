@@ -3,11 +3,12 @@ package cinevento.service;
 import cinevento.irl.Filme;
 import cinevento.repository.Cinema;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FilmeService implements Cinema {
+public class CinemaService implements Cinema {
 
     private Map<Integer, Filme> filmes = new HashMap<>();
 
@@ -23,21 +24,12 @@ public class FilmeService implements Cinema {
 
     @Override
     public List<Filme> listarFilmes() {
-        return null; //n é assim, eu so coloquei qualquer coisa pra IDE parar de encher o saco
+        return new ArrayList<>(filmes.values()); //eu sinceramente n sei o que fiz aqui, so sei que funciona
     }
 
     @Override
     public void removerFilme(int id) {
-        //TODO
+        filmes.remove(id);
     }
 
-    @Override
-    public void comprarIngresso() {
-        //todoAAAAAAAAAAAAAAAAAA
-    }
-
-    @Override
-    public void cancelarIngresso() {
-        //todo
-    }
 }

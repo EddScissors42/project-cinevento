@@ -54,4 +54,12 @@ public class Filme {
     public void setClassificacaoIndicativa(String classificacaoIndicativa) {
         this.classificacaoIndicativa = classificacaoIndicativa;
     }
+
+    @Override
+    public String toString() {
+        return "Filme:" + id +"(Nome: " + titulo +
+                "| Gênero: " + genero +
+                "| Duração(em sec): " + duracao +
+                "| Classificação Indicativa: " + classificacaoIndicativa;
+    }
 }

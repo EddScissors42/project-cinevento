@@ -10,6 +10,8 @@ public interface Cinema {
     List<Filme> listarFilmes();
     void removerFilme(int id);
 
-    void comprarIngresso (); //TODO
-    void cancelarIngresso(); //TODO
+    //void comprarIngresso (); //TODO
+    //void cancelarIngresso(); //TODO
+
+    //TODO - Cliente
 }
