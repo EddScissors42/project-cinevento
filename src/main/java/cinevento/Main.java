@@ -13,8 +13,10 @@ public class Main {
                 "Interestelar",
                 "Sci-Fi",
                 10140, //2h49m | 2 x 3600 = 7200 | 49 x 60 = 2940 = 7200 + 2940 = 10140
-                "L"
+                "10"
         );
+
+
 
         cinemaService.cadastrarFilme(filme);
 

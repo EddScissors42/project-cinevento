@@ -1,6 +1,9 @@
 package cinevento.service;
 
+import cinevento.irl.Cliente;
 import cinevento.irl.Filme;
+import cinevento.irl.Ingresso;
+import cinevento.irl.Sessao;
 import cinevento.repository.Cinema;
 
 import java.util.ArrayList;
@@ -30,6 +33,16 @@ public class CinemaService implements Cinema {
     @Override
     public void removerFilme(int id) {
         filmes.remove(id);
+    }
+
+    @Override
+    public Ingresso comprarIngresso(Cliente cliente, Sessao sessao) {
+        return null;
+    }
+
+    @Override
+    public void cancelarIngresso(String codigoReserva) {
+
     }
 
 }
