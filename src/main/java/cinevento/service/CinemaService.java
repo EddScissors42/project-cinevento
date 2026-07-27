@@ -75,7 +75,10 @@ public class CinemaService implements Cinema {
     }
 
     @Override
-    public void removerSessao(int numero) {
+    public void removerSessao(int numero) throws SessaoInexistenteException{
+        if (!sessoes.containsKey(numero)){
+            throw new SessaoInexistenteException("Essa sessão já não existe...?");
+        }
         sessoes.remove(numero);
     }
 

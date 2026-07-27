@@ -5,17 +5,18 @@ Um mini-sistema de Cinema com seleção de filmes, gerenciamento de ingressos e 
 
 ## Estrutura do projeto:
 ```text
-├── irl
+├── irl [Funções (get/set)]
 │   ├── Filme.java
 │   ├── Cliente.java
 │   ├── Filme.java
 │   ├── Ingresso.java
-│   └── Sala.java
+│   └── Sessao.java
 ├── repository
-│   ├── Cinema.java
-│   └── TipoSala.java
+│   ├── Cinema.java [Interface do sistema]
+│   └── TipoSala.java [Enum]
 ├── service
-│   └── FilmeService.java
+│   ├── FilmeService.java
+│   └── SessaoInexistenteException.java
 ├── ui
 └── Main.java
 
@@ -25,4 +26,5 @@ Tecnologias
 └── JFrame
 ```
 
-Feito por Maria Eduarda Chagas, Reydner Barros e Cauê Soares :)
+Desenvolvido por
+Cauê Soares (@cauesoares-beep), Maria Eduarda (@mariachagaas), Reydner Barros (@EddScissors42)
