@@ -2,7 +2,8 @@ package cinevento;
 
 import cinevento.irl.*;
 import cinevento.repository.TipoSala;
-import cinevento.service.CinemaService;
+import cinevento.service.*;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,6 +46,16 @@ public class Main {
         System.out.println("\n=== Sessões cadastradas ===");
         System.out.println(cinemaService.listarSessoes());
 
+        // teste de sessão, para evitar problemas problematicos
+        System.out.println("Interrompemos nossa programação para...\n=== Teste de excluir Sessão já excluida ===\n");
+        try {
+            cinemaService.removerSessao(2);
+        } catch (SessaoInexistenteException e) {
+            System.out.println("Erro esperado: " + e.getMessage());
+        }
+
+        System.out.println("\nVoltamos aos testes normais....");
+
         //sistema da compra de ingresso
         Ingresso ingresso = cinemaService.comprarIngresso(cliente, sessao);
 
@@ -56,6 +67,7 @@ public class Main {
         System.out.println("\nIngresso " + ingresso.getCodigoReserva() + " cancelado com sucesso.");
 
         // testando exceção, tente isso e pegue isso!
+
         try {
             cinemaService.cancelarIngresso("finjo-que-sou-umcodigo-gg");
         } catch (IllegalArgumentException e) {
