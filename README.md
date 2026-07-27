@@ -1,4 +1,4 @@
-# project-cinevento
+# Projeto Cinevento
 Um projeto OO de Java, para final da Disciplina POO 2026.1
 
 Um mini-sistema de Cinema com seleção de filmes, gerenciamento de ingressos e salvamento desses dados!
