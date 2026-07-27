@@ -3,6 +3,12 @@ Um projeto OO de Java, para final da Disciplina POO 2026.1
 
 Um mini-sistema de Cinema com seleção de filmes, gerenciamento de ingressos e salvamento desses dados!
 
+## Funcionalidades:
+- Cadastro, Pesquisa, Listagem e Exclusão de Filmes
+- Cadastro, Pesquisa, Listagem e Exclusão de Clientes
+- Compra e Cancelamento de Ingressos
+- Cadastro, Pesquisa, Listagem e Exclusão de Sessões
+
 ## Estrutura do projeto:
 ```text
 src/cinevento/
@@ -26,10 +32,11 @@ src/cinevento/
 test/cinevento/
 └── CinemaServiceTest.java [Testes JUnit - a fazer]
 
-Tecnologias
+Tecnologias usadas :D
 ├── Java 25
-└── Maven
-└── JFrame
+├── Maven
+├── Swing (JFrame, JMenuBar)
+└── JUnit
 ```
 
 Desenvolvido por
