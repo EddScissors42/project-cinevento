@@ -25,4 +25,13 @@ public class Cadeira {
     public void setOcupada(boolean ocupada) {
         this.ocupada = ocupada;
     }
+
+    @Override
+    public String toString(){
+        if (ocupada){
+            return codigo + " (🟥ocupada)";
+        } else {
+            return codigo + " (🟩livre)";
+        }
+    }
 }
