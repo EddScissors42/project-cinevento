@@ -40,6 +40,6 @@ public class Sessao {
 
     @Override
     public String toString() {
-        return "Sessão " + numero + " " + tipo + " Numero de cadeiras: " + cadeiras;
+        return "Sessão " + numero + " " + tipo + " Cadeiras disponiveis: " + cadeiras;
     }
 }
