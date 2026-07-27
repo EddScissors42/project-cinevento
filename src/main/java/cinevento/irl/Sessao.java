@@ -37,4 +37,9 @@ public class Sessao {
     public void setCadeiras(Map<String, Cadeira> cadeiras) {
         this.cadeiras = cadeiras;
     }
+
+    @Override
+    public String toString() {
+        return "Sessão " + numero + tipo + "Numero de cadeiras: " + cadeiras;
+    }
 }

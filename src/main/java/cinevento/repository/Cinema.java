@@ -12,9 +12,19 @@ public interface Cinema {
     List<Filme> listarFilmes();
     void removerFilme(int id);
 
+    //Cliente
+    void cadastrarCliente(Cliente cliente);
+    Cliente pesquisarCliente(String codigo);
+    List<Cliente> listarClientes();
+    void removerCliente(String codigo);
+
     //Ingressos - Sessões
     Ingresso comprarIngresso(Cliente cliente, Sessao sessao);
     void cancelarIngresso(String codigoReserva);
 
-    //TODO - Cliente
+    //Sessões
+    void cadastrarSessao(Sessao sessao);
+    Sessao pesquisarSessao(int numero);
+    List<Sessao> listarSessoes();
+    void removerSessao(int numero);
 }
