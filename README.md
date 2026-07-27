@@ -5,20 +5,26 @@ Um mini-sistema de Cinema com seleção de filmes, gerenciamento de ingressos e 
 
 ## Estrutura do projeto:
 ```text
-├── irl [Funções (get/set)]
+src/cinevento/
+├── irl [entidades (get/set)]
 │   ├── Filme.java
 │   ├── Cliente.java
-│   ├── Filme.java
+│   ├── Cadeira.java
 │   ├── Ingresso.java
 │   └── Sessao.java
 ├── repository
-│   ├── Cinema.java [Interface do sistema]
+│   ├── Cinema.java [Interface do sistema / Façade!]
 │   └── TipoSala.java [Enum]
 ├── service
-│   ├── FilmeService.java
-│   └── SessaoInexistenteException.java
+│   ├── CinemaService.java [implementação de tudo]
+│   ├── SessaoInexistenteException.java
+│   └── GravadorDeDados.java [persistência - fazendo!]
 ├── ui
+│   └── TelaInicial.java [JFrame - a fazer]
 └── Main.java
+
+test/cinevento/
+└── CinemaServiceTest.java [Testes JUnit - a fazer]
 
 Tecnologias
 ├── Java 25
