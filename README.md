@@ -40,4 +40,4 @@ Tecnologias usadas :D
 ```
 
 Desenvolvido por
-Cauê Soares (@cauesoares-beep), Maria Eduarda (@mariachagaas), Reydner Barros (@EddScissors42)  lllllllll
+Cauê Soares (@cauesoares-beep), Maria Eduarda (@mariachagaas), Reydner Barros (@EddScissors42)
