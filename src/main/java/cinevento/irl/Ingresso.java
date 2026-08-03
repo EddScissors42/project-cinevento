@@ -20,9 +20,6 @@ public class Ingresso implements Serializable{
         this.sessao = sessao;
     }
     public String toString(){
-        return "Ingresso{"+
-                "codigoReserva='"+ codigoReserva+'\''+
-                ", sessao=" + sessao +
-                '}';
+        return "Ingresso: " + codigoReserva + " para a Sessão " + sessao;
     }
 }

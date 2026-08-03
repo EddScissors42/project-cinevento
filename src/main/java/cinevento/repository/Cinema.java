@@ -2,6 +2,7 @@ package cinevento.repository;
 
 import cinevento.irl.*;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface Cinema {
@@ -27,4 +28,8 @@ public interface Cinema {
     Sessao pesquisarSessao(int numero);
     List<Sessao> listarSessoes();
     void removerSessao(int numero);
+
+    //Salvamentos!
+    void salvarDados(String nomeArquivo) throws IOException;
+    void recuperarDados(String nomeArquivo) throws IOException, ClassNotFoundException;
 }

@@ -1,17 +1,21 @@
 package cinevento.irl;
 
 import cinevento.repository.TipoSala;
+
+import java.io.Serializable;
 import java.util.Map;
 
-public class Sessao {
+public class Sessao implements Serializable {
     private int numero;
-    private TipoSala tipo; // Sala 3D, Macro XE, IMAX
-    private Map<String, Cadeira> cadeiras; // cadeira lol
+    private TipoSala tipo;
+    private Map<String, Cadeira> cadeiras;
+    private Filme filme;
 
-    public Sessao(int numero, TipoSala tipo, Map<String, Cadeira> cadeiras){
+    public Sessao(int numero, TipoSala tipo, Map<String, Cadeira> cadeiras, Filme filme){
         this.numero = numero;
         this.tipo = tipo;
         this.cadeiras = cadeiras;
+        this.filme = filme;
     }
 
     public int getNumero() {
@@ -38,8 +42,16 @@ public class Sessao {
         this.cadeiras = cadeiras;
     }
 
+    public Filme getFilme() {
+        return filme;
+    }
+
+    public void setFilme(Filme filme) {
+        this.filme = filme;
+    }
+
     @Override
     public String toString() {
-        return "Sessão " + numero + " " + tipo + " Cadeiras disponiveis: " + cadeiras;
+        return "Sessão " + numero + " " + tipo + " Cadeiras disponiveis: " + cadeiras + "\nFilme: " + filme;
     }
 }

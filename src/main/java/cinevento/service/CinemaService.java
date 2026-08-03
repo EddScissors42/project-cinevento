@@ -1,8 +1,9 @@
 package cinevento.service;
 
 import cinevento.irl.*;
-import cinevento.repository.Cinema;
+import cinevento.repository.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -80,6 +81,26 @@ public class CinemaService implements Cinema {
             throw new SessaoInexistenteException("Essa sessão já não existe...?");
         }
         sessoes.remove(numero);
+    }
+
+
+    // salvamentos
+    @Override
+    public void salvarDados(String nomeArquivo) {
+        try {
+            GravadorDeDados.salvar(filmes, nomeArquivo);
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void recuperarDados(String nomeArquivo) {
+        try{
+            filmes = (Map<Integer, Filme>) GravadorDeDados.recuperar(nomeArquivo);
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Erro ao recuperar dados: " + e.getMessage());
+        }
     }
 
     //agora os ingresso (uma implementação de vdd)

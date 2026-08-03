@@ -1,17 +1,18 @@
 package cinevento.repository;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class GravadorDeDados {
 
-    public static void salvar(Object dados, String nomeArquivo) {
+    public static void salvar(Object dados, String nomeArquivo) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nomeArquivo))) {
             oos.writeObject(dados);
-            System.out.println("Dados salvos com sucesso em: " + nomeArquivo);
-        } catch (IOException e) {
-            System.out.println("Erro ao salvar: " + e.getMessage());
+        }
+    }
+
+    public static Object recuperar(String nomeArquivo) throws IOException, ClassNotFoundException {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nomeArquivo))) {
+            return ois.readObject();
         }
     }
 }

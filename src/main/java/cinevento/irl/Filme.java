@@ -1,6 +1,8 @@
 package cinevento.irl;
 
-public class Filme {
+import java.io.Serializable;
+
+public class Filme implements Serializable {
     private int id; //id interno do filme
     private String titulo;
     private String genero;
@@ -57,9 +59,9 @@ public class Filme {
 
     @Override
     public String toString() {
-        return "Filme:" + id +"(Nome: " + titulo +
-                "| Gênero: " + genero +
-                "| Duração(em sec): " + duracao +
-                "| Classificação Indicativa: " + classificacaoIndicativa;
+        return "(" + id + ")" + titulo +
+                " | Gênero: " + genero +
+                " | Duração: " + duracao +
+                "s| [" + classificacaoIndicativa + "]";
     }
 }

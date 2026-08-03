@@ -1,6 +1,7 @@
 package cinevento.ui;
 
 import cinevento.irl.Cadeira;
+import cinevento.irl.Filme;
 import cinevento.irl.Sessao;
 import cinevento.repository.TipoSala;
 import cinevento.service.CinemaService;
@@ -15,6 +16,7 @@ public class TelaSessoes extends JFrame {
     private JTextField txtNumero;
 
     private JComboBox<TipoSala> cbTipoSala;
+    private JComboBox<Filme> cbFilme;
 
     private JButton btnCadastrar;
     private JButton btnBuscar;
@@ -59,6 +61,13 @@ public class TelaSessoes extends JFrame {
 
         add(painelCampos, BorderLayout.NORTH);
 
+        painelCampos.add(new JLabel("Filme"));
+
+        cbFilme = new JComboBox<>();
+        atualizarComboFilmes();
+
+        painelCampos.add(cbFilme);
+
         JPanel painelBotoes = new JPanel(new GridLayout(1,5,5,5));
 
         btnCadastrar = new JButton("Cadastrar");
@@ -93,6 +102,13 @@ public class TelaSessoes extends JFrame {
         btnCadastrar.addActionListener(e -> {
 
             try{
+                Filme filmeSelecionado = (Filme) cbFilme.getSelectedItem();
+
+
+                if (filmeSelecionado == null) {
+                    JOptionPane.showMessageDialog(null, "Cadastre um filme antes de criar uma sessão.");
+                    return;
+                }
 
                 Map<String,Cadeira> cadeiras = new HashMap<>();
 
@@ -101,11 +117,10 @@ public class TelaSessoes extends JFrame {
                 cadeiras.put("A3", new Cadeira("A3",false));
 
                 Sessao sessao = new Sessao(
-
                         Integer.parseInt(txtNumero.getText()),
                         (TipoSala) cbTipoSala.getSelectedItem(),
-                        cadeiras
-
+                        cadeiras,
+                        filmeSelecionado
                 );
 
                 cinemaService.cadastrarSessao(sessao);
@@ -201,8 +216,16 @@ public class TelaSessoes extends JFrame {
 
             areaResultado.setText("");
 
+            atualizarComboFilmes();
         });
 
+    }
+
+    private void atualizarComboFilmes() {
+        cbFilme.removeAllItems();
+        for (Filme filme : cinemaService.listarFilmes()) {
+            cbFilme.addItem(filme);
+        }
     }
 
 }

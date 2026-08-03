@@ -1,6 +1,8 @@
 package cinevento.irl;
 
-public class Cadeira {
+import java.io.Serializable;
+
+public class Cadeira implements Serializable {
 
     private String codigo;
     private boolean ocupada;
