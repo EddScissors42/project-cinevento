@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class CinemaService implements Cinema {
 
@@ -101,6 +102,21 @@ public class CinemaService implements Cinema {
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Erro ao recuperar dados: " + e.getMessage());
         }
+    }
+
+    @Override
+    public List<Filme> listarFilmesPorGenero(String genero) {
+        return filmes.values().stream()
+                .filter(filme -> filme.getGenero().equalsIgnoreCase(genero))//a peneira (filtro)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> obterTitulosPorClassificacao(String classificacao) {
+        return filmes.values().stream()
+                .filter(filme -> filme.getClassificacaoIndicativa().equalsIgnoreCase(classificacao))
+                .map(Filme::getTitulo)
+                .collect(Collectors.toList());
     }
 
     //agora os ingresso (uma implementação de vdd)

@@ -32,4 +32,8 @@ public interface Cinema {
     //Salvamentos!
     void salvarDados(String nomeArquivo) throws IOException;
     void recuperarDados(String nomeArquivo) throws IOException, ClassNotFoundException;
+
+    //os dois que chegaram tarde na festa pq alguem esqueceu de usar Strems yay
+    List<Filme> listarFilmesPorGenero(String genero);
+    List<String> obterTitulosPorClassificacao(String classificacao);
 }
