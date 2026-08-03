@@ -6,8 +6,8 @@ Um mini-sistema de Cinema com seleção de filmes, gerenciamento de ingressos e 
 ## Funcionalidades:
 - Cadastro, Pesquisa, Listagem e Exclusão de Filmes
 - Cadastro, Pesquisa, Listagem e Exclusão de Clientes
-- Compra e Cancelamento de Ingressos
-- Cadastro, Pesquisa, Listagem e Exclusão de Sessões
+- Compra sistemática de ingressos para clientes [Versão Lite]
+- Apontamento do filme cadastrado para uma sessão do cinema
 
 ## Estrutura do projeto:
 ```text
@@ -22,15 +22,20 @@ src/cinevento/
 │   ├── Cinema.java [Interface do sistema / Façade!]
 │   └── TipoSala.java [Enum]
 ├── service
-│   ├── CinemaService.java [implementação de tudo]
+│   ├── CinemaService.java [implementação dos metodos]
 │   ├── SessaoInexistenteException.java
-│   └── GravadorDeDados.java [persistência - fazendo!]
+│   └── GravadorDeDados.java [persistência de dados do sistema]
 ├── ui
-│   └── TelaInicial.java [JFrame - a fazer]
+│   ├── TelaAtendimentoClient.java [o ponto de venda intuitivo para clientes]
+│   ├── TelaClientes.java
+│   ├── TelaFilmes.java
+│   ├── TelaIngressos.java
+│   ├── TelaInicial.java
+│   └── TelaSessoes.java
 └── Main.java
 
 test/cinevento/
-└── CinemaServiceTest.java [Testes JUnit - a fazer]
+└── CinemaServiceTest.java [Testes JUnit]
 
 Tecnologias usadas :D
 ├── Java 25
